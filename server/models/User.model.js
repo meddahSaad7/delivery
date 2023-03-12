@@ -1,0 +1,32 @@
+const mongoose=require('mongoose');
+const UserSchema=new mongoose.Schema({
+    firstName:{
+        type:String,
+        reuqired:true,
+    },
+    lastName:{
+        type:String,
+        reuqired:true
+    },
+    email:{
+        type:String,
+        reuqired:true,
+        max:50,
+        unique:true
+    },
+    password:{
+        type:String,
+        reuqired:true,
+        min:6
+    },
+    wilaya:{
+        type:String,
+        required:true
+    },
+    phoneNumber:{
+        type:String,
+        required:true,
+        unique:true
+    }
+},{timestamps:true})
+module.exports=mongoose.model("User",UserSchema)
